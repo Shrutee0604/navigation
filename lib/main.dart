@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:navigation/home_page.dart';
-
-
-
 void main() {
   runApp(MyApp());
 }
@@ -20,6 +16,31 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Home Page"),
+      ),
+      body: Center(
+        child: ElevatedButton(
+            onPressed: (){
+              Navigator.push(context,MaterialPageRoute(builder: (context){
+                return Scaffold(
+                  appBar: AppBar(
+                    title: Text("Second Page"),
+                  ),
+                );
+              }));
+            },
+            child: Text("Next Page")
+        ),
+      ),
     );
   }
 }
