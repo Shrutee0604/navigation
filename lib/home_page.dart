@@ -12,9 +12,7 @@ class MyHomePage extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           onPressed: (){
-            Navigator.push(context, MaterialPageRoute(builder: (context){
-              return SecondPage();
-            }));
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>SecondPage()));
           },
           child: Text("Next Page"),
       ),
